@@ -65,7 +65,7 @@ main,
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0.5rem 0.5rem; /* Tighter padding for narrow screens */
+  padding: 0.5rem 0.75rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -73,22 +73,21 @@ main,
   width: 100%;
 }
 
+/* Force "Davao" and "Getaways" to wrap onto two lines cleanly */
 .brand-logo {
-  font-size: 0.85rem; /* Significantly smaller logo text */
+  font-size: 0.9rem;
   font-weight: 700;
   color: #0f172a;
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 0.2rem;
-  white-space: nowrap;
-  flex-shrink: 0; /* Prevents logo from crushing */
-}
-
-.brand-logo img,
-.brand-logo svg,
-.brand-logo span {
-  font-size: 0.9rem; /* Shrinks the palm icon if using text/emoji */
+  gap: 0.35rem;
+  
+  /* Line wrapping magic */
+  max-width: 75px; /* Restricts width so "Getaways" wraps below "Davao" */
+  white-space: normal !important;
+  line-height: 1.05;
+  flex-shrink: 0;
 }
 
 .brand-logo b {
@@ -97,17 +96,15 @@ main,
 
 .nav-menu {
   display: flex;
-  gap: 0.4rem; /* Tight spacing between the 4 links */
+  gap: 0.65rem; /* Roomy gap for links */
   align-items: center;
-  padding-left: 0.25rem;
 }
 
 .nav-item {
   text-decoration: none;
   color: #475569;
   font-weight: 600;
-  font-size: 0.75rem; /* Scaled down link text so all 4 fit on mobile */
-  padding: 0 2px;
+  font-size: 0.825rem;
   white-space: nowrap;
 }
 
