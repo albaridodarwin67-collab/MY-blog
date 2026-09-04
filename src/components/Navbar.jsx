@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react_router_dom'; // Adjust to 'react-router-dom' if standard import
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
