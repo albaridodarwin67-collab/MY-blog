@@ -1256,3 +1256,85 @@ body {
   line-height: 1.5;
   margin: 0;
 }
+/* ==========================================
+   RESPONSIVE LAYOUT & MEDIA QUERIES
+   ========================================== */
+
+/* 1. Fluid Base & Typography */
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* Prevents unwanted horizontal scroll on mobile */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* 2. Responsive Containers */
+.container, main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+/* 3. Responsive Images & Media */
+img, svg, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 4. Responsive Grid & Flex Layouts */
+.grid-layout, .blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ==========================================
+   BREAKPOINTS
+   ========================================== */
+
+/* Mobile Phones (Up to 640px) */
+@media (max-width: 640px) {
+  h1 {
+    font-size: 1.75rem !important;
+    line-height: 1.25;
+  }
+  
+  h2 {
+    font-size: 1.4rem !important;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  /* Scale down the Flying Eagle on small screens so it doesn't block content */
+  .ph-eagle-body {
+    width: 140px !important;
+    height: 90px !important;
+  }
+
+  .ph-tree-branch {
+    width: 150px !important;
+    height: 60px !important;
+  }
+}
+
+/* Tablets & Small Laptops (641px to 1024px) */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .grid-layout, .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .ph-eagle-body {
+    width: 180px !important;
+    height: 115px !important;
+  }
+}
