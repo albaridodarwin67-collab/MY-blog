@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage';
 import BlogFeedPage from './pages/BlogFeedPage';
 import BlogDetailPage from './pages/BlogDetailPage';
 import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage.jsx';
 import Chatbot from './components/Chatbot';
 import FlyingEagle from './components/FlyingEagle';
 import coderImg from './assets/coder.jpg';
@@ -24,6 +25,7 @@ export default function App() {
           <Route path="/blog" element={<BlogFeedPage />} />
           <Route path="/blog/:id" element={<BlogDetailPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </main>
 
