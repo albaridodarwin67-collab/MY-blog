@@ -1338,3 +1338,21 @@ img, svg, video {
     height: 115px !important;
   }
 }
+/* Enable smooth touch scrolling for SubNav category tabs */
+.subnav-container, .category-bar {
+  display: flex !important;
+  overflow-x: auto !important;
+  white-space: nowrap !important;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.5rem;
+}
+
+.subnav-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for clean UI */
+}
+
+/* Ensure Eagle mascot doesn't block header clicks */
+.ph-eagle-stage {
+  z-index: 100 !important; /* Keep lower than Navbar z-index (9999) */
+  pointer-events: none !important;
+}
