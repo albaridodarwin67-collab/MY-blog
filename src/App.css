@@ -65,35 +65,30 @@ main,
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 0.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-sizing: border-box;
   width: 100%;
 }
 
-/* Force "Davao" and "Getaways" to wrap onto two lines cleanly */
+/* Strictly scale down the logo font & keep it single-line */
 .brand-logo {
-  font-size: 0.9rem;
+  font-size: 0.75rem !important; /* Made significantly smaller */
   font-weight: 700;
   color: #0f172a;
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 0.35rem;
-  
-  /* Line wrapping magic */
-  max-width: 75px; /* Restricts width so "Getaways" wraps below "Davao" */
-  white-space: normal !important;
-  line-height: 1.05;
+  gap: 0.2rem;
+  white-space: nowrap !important; /* Keeps it on 1 line without broken text */
+  max-width: none !important;
   flex-shrink: 0;
 }
 
 .brand-logo b {
   color: #059669;
 }
-
 .nav-menu {
   display: flex;
   gap: 0.65rem; /* Roomy gap for links */
