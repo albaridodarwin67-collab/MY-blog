@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
     <nav className="navbar">
       <div className="nav-container">
@@ -14,22 +12,11 @@ export default function Navbar() {
           <span className="logo-green">Getaways</span>
         </Link>
 
-        {/* Mobile Hamburger Button */}
-        <button 
-          className="hamburger" 
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle navigation"
-        >
-          <span className={`bar ${isOpen ? 'open' : ''}`}></span>
-          <span className={`bar ${isOpen ? 'open' : ''}`}></span>
-          <span className={`bar ${isOpen ? 'open' : ''}`}></span>
-        </button>
-
-        {/* Nav Links */}
-        <div className={`nav-links ${isOpen ? 'active' : ''}`}>
-          <Link to="/" onClick={() => setIsOpen(false)}>Home</Link>
-          <Link to="/blog" onClick={() => setIsOpen(false)}>Blog</Link>
-          <Link to="/about" onClick={() => setIsOpen(false)}>About</Link>
+        {/* Inline Nav Links */}
+        <div className="nav-links">
+          <Link to="/">Home</Link>
+          <Link to="/blog">Blog</Link>
+          <Link to="/about">About</Link>
         </div>
       </div>
 
@@ -50,7 +37,6 @@ export default function Navbar() {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          position: relative;
         }
 
         .brand-logo {
@@ -60,6 +46,7 @@ export default function Navbar() {
           text-decoration: none;
           font-weight: 800;
           font-size: 1.35rem;
+          white-space: nowrap;
         }
 
         .logo-dark { color: #0f172a; }
@@ -68,7 +55,7 @@ export default function Navbar() {
         .nav-links {
           display: flex;
           align-items: center;
-          gap: 2rem;
+          gap: 1.5rem;
         }
 
         .nav-links a {
@@ -83,47 +70,22 @@ export default function Navbar() {
           color: #059669;
         }
 
-        .hamburger {
-          display: none;
-          flex-direction: column;
-          gap: 5px;
-          background: none;
-          border: none;
-          cursor: pointer;
-          padding: 0.5rem;
-        }
-
-        .bar {
-          width: 24px;
-          height: 3px;
-          background-color: #0f172a;
-          border-radius: 2px;
-          transition: all 0.3s ease;
-        }
-
         /* MOBILE STYLES */
         @media (max-width: 768px) {
-          .hamburger {
-            display: flex;
+          .nav-container {
+            padding: 0.65rem 1rem;
+          }
+
+          .brand-logo {
+            font-size: 1.05rem;
           }
 
           .nav-links {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            background: #ffffff;
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 1rem 1.5rem;
-            gap: 1.25rem;
-            border-bottom: 1px solid #e2e8f0;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            display: none;
+            gap: 1rem;
           }
 
-          .nav-links.active {
-            display: flex;
+          .nav-links a {
+            font-size: 0.875rem;
           }
         }
       `}</style>
